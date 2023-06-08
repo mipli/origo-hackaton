@@ -1,10 +1,13 @@
 # Origo AI Hackathon 2023
 
-## Personvern
+## Personvern og bruk av regioner
 
-Kommer litt info her. Inntil videre er følgende lenke nyttig.
+Fordelen med å bruke Azure OpenAI framfor OpenAI direkte, er at de fleste AI-tjenestene kjører i EU og at vi har mer kontroll på hvordan data brukes og ikke brukes. 
 
+Les litt om forskjellene:\
 https://msandbu.org/openai-vs-azure-openai/
+
+Du har trolig ikke rettigheter til å opprette `Resource Groups` under `OOO-Sandbox`. Vi har derfor opprettet ferdige ressursgrupper som skal brukes. Pass på å bruke eller opprette ressurser i EU, med unntak av DALL-E som må kjøres i US. Tenk derfor gjennom hvilke data som brukes for generering av bilder.
 
 ## Kom i gang!
 
