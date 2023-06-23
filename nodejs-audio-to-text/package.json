@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-audio-to-text",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Transcribes user input (WAV file or microphone)",
+  "main": "transcribe/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Oslo Origo",
+  "license": "ISC",
+  "dependencies": {
+    "microsoft-cognitiveservices-speech-sdk": "^1.29.0",
+    "yargs": "^17.7.2",
+    "dotenv": "^16.1.4"
+  }
+}
