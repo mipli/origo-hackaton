@@ -1,0 +1,43 @@
+.code-review-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "code-header code-review-header"
+    "code code-review";
+}
+
+.code-header {
+    align-self: end;
+    grid-area: code-header;
+    display: flex;
+    align-items: center;
+}
+
+.language-select {
+    margin-left: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+.submit-button {
+    margin-left: auto;
+    height: 30px;
+}
+
+.code-review-header {
+    align-self: end;
+    grid-area: code-review-header;
+}
+
+.code {
+    min-height: 80vh;
+    grid-area: code;
+}
+
+.code-review {
+    min-height: 80vh;
+    grid-area: code-review;
+}
