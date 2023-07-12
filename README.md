@@ -1,5 +1,9 @@
 # Origo AI Hackathon 2023
 
+
+https://miro.com/app/board/uXjVMA7_Rj4=/
+
+
 ## Personvern og bruk av regioner
 
 Fordelen med å bruke Azure OpenAI framfor OpenAI direkte, er at de fleste AI-tjenestene kjører i EU og at vi har mer kontroll på hvordan data brukes og ikke brukes. 
