@@ -4,7 +4,8 @@ Eksempelkode for bruk av Azure sitt ChatGPT-API.
 
 ## Oppsett av ChatGPT-deployment i Azure
 
-- Sjekk at du har tilgang til ressursen https://portal.azure.com/#@oslokommune.onmicrosoft.com/resource/subscriptions/1935e788-aece-4955-8c43-bad4bf16912a/resourceGroups/East-US-RG/providers/Microsoft.CognitiveServices/accounts/openai-test-for-hackathon-research-US/overview
+- Åpne [Azure OpenAI](https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI) i Azure Portal
+- Velg [OpenAI-ressursen](https://portal.azure.com/#@oslokommune.onmicrosoft.com/resource/subscriptions/1935e788-aece-4955-8c43-bad4bf16912a/resourceGroups/West-EU-RG/providers/Microsoft.CognitiveServices/accounts/openai-test-for-hackathon-research-EU/overview) som ligger i EU
 - Trykk på **Explore** for å komme inn i OpenAI Studio.
 - Velg **Deployments** i menyen til venstre.
 - Trykk **Create new deployment** for å opprette et miljø å jobbe i for teamet ditt.
@@ -18,7 +19,8 @@ Følgende kommandoer setter nødvendige miljøvariabler, bygger Kotlin-koden og 
 
 ```
 export DEPLOYMENT_NAME=<Navnet på din deployment i OpenAi Studio>
-export API_KEY=<Api-nøkkel fra ressursen i Azure -> Keys and endpoint>
+export API_KEY=<KEY fra ressursen i Azure -> Keys and endpoint>
+export ENDPOINT=<Endpoint fra ressursen i Azure -> Keys and endpoint>
 cd api
 ./gradlew run
 ```
