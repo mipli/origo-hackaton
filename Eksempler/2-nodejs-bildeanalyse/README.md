@@ -2,7 +2,7 @@
 
 Dette eksempelet sender et foto til Azure Cognitive Services Vision for analyse. I retur får du diverse metadata om bildet.
 
-For å kjøre må du logge deg inn på https://portal.azure.com og hente ned en key og et endpoint fra en passende Cognitive Services Vision-ressurs som ligger i North Europe (der har de den nyeste versjonen per juni 2023).
+For å kjøre må du logge deg inn på https://portal.azure.com og hente ned en key og et endpoint fra en passende Cognitive Services ComputerVision-ressurs som ligger i North Europe (der har de den nyeste versjonen per juni 2023).
 
 Kopier .env-eksempelfila og bytt ut verdiene:
 

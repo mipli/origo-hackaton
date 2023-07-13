@@ -34,7 +34,6 @@ async function analyzeImage() {
   try {
     const response = await axios.post(url, imageData, { headers: headers })
     console.log(JSON.stringify(response.data, null, 2))
-    //console.table(response.data.tagsResult.values)
   } catch (error) {
     console.log(error)
   }

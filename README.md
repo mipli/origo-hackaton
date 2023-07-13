@@ -6,7 +6,7 @@ Vi har klargjort dette prosjektet for enkelt å komme i gang:
 
 * Oversikt over [grupper og ideer](https://miro.com/app/board/uXjVMA7_Rj4=/) finnes i Miro
 * Se lenker nedenfor for å lage nødvendige ressurser og nøkler
-* Se [eksempler](Eksempler) for en kick-start av deres prosjekt
+* Se [eksempler](Eksempler) for en kick-start av deres prosjekt (ta de gjerne i rekkefølge)
 * Sjekk inn deres kode [katalogen for din gruppe](Grupper)
 
 ## Personvern og bruk av regioner

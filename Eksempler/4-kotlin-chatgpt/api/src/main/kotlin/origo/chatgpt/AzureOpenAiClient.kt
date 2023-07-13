@@ -13,7 +13,8 @@ class AzureOpenAiClient {
     private val apiKey = System.getenv("API_KEY")
         ?: throw NullPointerException("Environment variable 'API_KEY' is NULL. Set this environment variable and run again." )
 
-    private val endpoint = "https://openai-test-for-hackathon-research-us.openai.azure.com/"
+    private val endpoint = System.getenv("ENDPOINT")
+        ?: throw NullPointerException("Environment variable 'ENDPOINT' is NULL. Set this environment variable and run again." )
 
     private val azureClient by lazy {
         OpenAIClientBuilder()
