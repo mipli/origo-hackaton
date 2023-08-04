@@ -1,5 +1,8 @@
-.chat-history {
+.simple-chat-container {
     margin-top: 5vh;
+}
+
+.chat-history {
     padding: 15px;
     min-height: 10vh;
 }

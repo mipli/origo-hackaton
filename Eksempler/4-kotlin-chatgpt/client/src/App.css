@@ -1,6 +1,6 @@
 .header {
-  justify-content: end;
   display: flex;
+  justify-content: flex-end;
 }
 
 .header-button {
