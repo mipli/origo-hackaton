@@ -5,6 +5,7 @@ import MarkdownPreview from "@uiw/react-markdown-preview";
 import "./simpleChat.css"
 
 enum ChatRole {
+    SYSTEM = 'system',
     ASSISTANT = 'assistant',
     USER = 'user',
 }
@@ -15,15 +16,10 @@ interface ChatMessage {
 }
 
 function SimpleChat() {
-    const [chatHistory, setChatHistory] = React.useState<Array<ChatMessage>>([]);
+    const [chatHistory] = React.useState<Array<ChatMessage>>([]);
+    const [systemPrompt, setSystemPrompt] = React.useState<string>('');
     const [currentMessage, setCurrentMessage] = React.useState<string>('');
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
-    const chatStyle = {
-        width: '100%',
-        height: '100%',
-        fontSize: 18,
-    };
 
     const handleSubmit = () => {
         if (isLoading) {
@@ -38,13 +34,19 @@ function SimpleChat() {
         setCurrentMessage("");
         setIsLoading(true);
 
+        //Prepend the system prompt to the chat history if it's not blank
+        const payload = systemPrompt ? [{
+            role: ChatRole.SYSTEM,
+            content: systemPrompt
+        }].concat(chatHistory) : chatHistory
+
         fetch('http://localhost:9000/simple-chat', {
             method: "POST",
             headers: {
                 "Accept": "text/plain",
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(chatHistory),
+            body: JSON.stringify(payload),
         })
         .then(async res => {
             chatHistory.push({
@@ -71,22 +73,31 @@ function SimpleChat() {
     }
 
     return (
-        <div className="simple-chat-container">
-            <MarkdownPreview
-                className={"chat-history"}
-                source={parseChatHistory()}
-                style={chatStyle}
-            />
-            <CodeEditor
-                value={currentMessage}
-                language=""
-                placeholder="Type here"
-                onChange={(e) => setCurrentMessage(e.target.value)}
-                padding={15}
-                style={chatStyle}
-                onKeyUp={handleKeyPress}
-            />
-        </div>
+        <>
+            <div className="simple-chat-container">
+                <CodeEditor
+                    className={"chat-prompt"}
+                    value={systemPrompt}
+                    language=""
+                    placeholder="Enter system prompt here (optional)"
+                    onChange={(e) => setSystemPrompt(e.target.value)}
+                    padding={15}
+                />
+                <MarkdownPreview
+                    className={"chat-history"}
+                    source={parseChatHistory()}
+                />
+                <CodeEditor
+                    className={"chat-input"}
+                    value={currentMessage}
+                    language=""
+                    placeholder="Type here"
+                    onChange={(e) => setCurrentMessage(e.target.value)}
+                    padding={15}
+                    onKeyUp={handleKeyPress}
+                />
+            </div>
+        </>
     );
 }
 
