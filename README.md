@@ -33,3 +33,8 @@ https://learn.microsoft.com/en-us/azure/cognitive-services/openai/quickstart?tab
 
 Eksempel med DALL-E:\
 https://learn.microsoft.com/en-us/azure/cognitive-services/openai/dall-e-quickstart?pivots=rest-api
+
+## Ressurser
+
+Hvordan skrive gode prompts til GPT-3:\
+https://www.kode24.no/artikkel/sann-far-du-til-de-beste-gpt-promptene-invester-tid/79792138
