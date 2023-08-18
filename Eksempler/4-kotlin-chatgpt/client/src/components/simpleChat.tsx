@@ -21,19 +21,6 @@ function SimpleChat() {
     const [currentMessage, setCurrentMessage] = React.useState<string>('');
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
-    const chatStyle = {
-        width: '100%',
-        height: '100%',
-        fontSize: 18,
-    };
-
-    const promptStyle = {
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'black',
-        fontSize: 12,
-    };
-
     const handleSubmit = () => {
         if (isLoading) {
             return;
@@ -89,25 +76,24 @@ function SimpleChat() {
         <>
             <div className="simple-chat-container">
                 <CodeEditor
+                    className={"chat-prompt"}
                     value={systemPrompt}
                     language=""
                     placeholder="Enter system prompt here (optional)"
                     onChange={(e) => setSystemPrompt(e.target.value)}
                     padding={15}
-                    style={promptStyle}
                 />
                 <MarkdownPreview
                     className={"chat-history"}
                     source={parseChatHistory()}
-                    style={chatStyle}
                 />
                 <CodeEditor
+                    className={"chat-input"}
                     value={currentMessage}
                     language=""
                     placeholder="Type here"
                     onChange={(e) => setCurrentMessage(e.target.value)}
                     padding={15}
-                    style={chatStyle}
                     onKeyUp={handleKeyPress}
                 />
             </div>
