@@ -9,6 +9,7 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import kotlinx.serialization.json.Json
 
 fun main() {
     embeddedServer(Jetty, port = 9000, host = "0.0.0.0", module = Application::module)
@@ -23,7 +24,9 @@ fun Application.module() {
 
 fun Application.configureSerialization() {
     install(ContentNegotiation) {
-        json()
+        json(Json {
+            ignoreUnknownKeys = true
+        })
     }
 }
 
